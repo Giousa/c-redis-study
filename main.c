@@ -11,6 +11,7 @@ int main() {
 //    sdsnewlen(p,100);
     sds s = sdsnew(p);
     printf("获取sds字符串：%s\n", s);
+    printf("实际保存的长度：%d\n", sdslen(s));
 
     return 0;
 }
