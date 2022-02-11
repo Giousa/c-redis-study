@@ -172,7 +172,7 @@ sds sdscatlen(sds s, const void *t, size_t len) {
 
     //追加数据
     sh = (void *) (s - (sizeof(struct sdshdr)));
-    memccpy(s + curlen, t, len);
+    memcpy(s + curlen, t, len);
 
     //更新属性
     sh->len = curlen + len;
@@ -194,4 +194,28 @@ sds sdscat(sds s, const void *t) {
  */
 sds sdscatsds(sds s, const sds t) {
     return sdscatlen(s, t, sdslen(t));
+}
+
+/**
+ * 将字符串 t 的前 len 个字符复制到 sds s 当中，并在字符串的最后添加终结符。
+ * 注意：会直接替换字符串，不是追加
+ */
+sds sdscpylen(sds s, const char *t, size_t len) {
+    struct sdshdr *sh = (void *) (s - (sizeof(struct sdshdr)));
+
+    size_t totlen = sh->free + sh->len;
+    if (totlen < len) {
+        s = sdsMakeRoomFor(s, len - sh->len);
+        if (s == NULL) return NULL;
+        sh = (void *) (s - (sizeof(struct sdshdr)));
+        totlen = sh->free + sh->len;
+    }
+
+    memcpy(s, t, len);
+    s[len] = '\0';
+
+    sh->len = len;
+    sh->free = totlen - len;
+
+    return s;
 }

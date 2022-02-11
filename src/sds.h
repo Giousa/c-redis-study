@@ -42,4 +42,6 @@ sds sdscat(sds s,const void *t);
 
 sds sdscatsds(sds s,const sds t);
 
+sds sdscpylen(sds s,const char *t,size_t len);
+
 #endif //C_REDIS_STUDY_SDS_H

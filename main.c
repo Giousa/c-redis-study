@@ -7,11 +7,13 @@
 int main() {
     printf("Hello, World!\n");
 
-    char *p = "hello world";
-//    sdsnewlen(p,100);
+    char *p = "helloworld";
     sds s = sdsnew(p);
-    printf("获取sds字符串：%s\n", s);
-    printf("实际保存的长度：%d\n", sdslen(s));
+    char *t = "123";
+    sds s2 = sdscpylen(s, t, 3);
+//    printf("s2 len=%d,free=%d,buf=%s\n",s2)
+    printf("s=%s\n", s);
+    printf("s2=%s\n", s2);
 
     return 0;
 }
