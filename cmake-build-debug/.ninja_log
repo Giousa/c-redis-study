@@ -1,0 +1,5 @@
+# ninja log v5
+112	191	1644486415670695258	c_redis_study	1cf5fdf6785003b
+0	93	1644477527277667769	CMakeFiles/c_redis_study.dir/main.c.o	a2f68e9e23d25127
+2	111	1644486415588333504	CMakeFiles/c_redis_study.dir/src/zmalloc.c.o	46c195b162508eaa
+0	119	1644486985299431348	build.ninja	cbccbbcf28ccf1f0

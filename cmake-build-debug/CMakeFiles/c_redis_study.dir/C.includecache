@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/zhangmengmeng/workspace/cproject/c-redis-study/main.c
+stdio.h
+-
+string.h
+/Users/zhangmengmeng/workspace/cproject/c-redis-study/string.h
+src/zmalloc.h
+/Users/zhangmengmeng/workspace/cproject/c-redis-study/src/zmalloc.h
+src/sds.h
+/Users/zhangmengmeng/workspace/cproject/c-redis-study/src/sds.h
+
+/Users/zhangmengmeng/workspace/cproject/c-redis-study/src/sds.h
+malloc/malloc.h
+-
+
+/Users/zhangmengmeng/workspace/cproject/c-redis-study/src/zmalloc.h
+malloc/malloc.h
+-
+
